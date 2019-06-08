@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.telaAgendamentoController">
+   <children>
+      <GridPane layoutX="69.0" layoutY="84.0" prefHeight="125.0" prefWidth="443.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="66.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="377.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nome:">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Horário:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Data:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_nome" GridPane.columnIndex="1" />
+            <TextField fx:id="txt_hora" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="250.0" />
+               </GridPane.margin>
+            </TextField>
+            <DatePicker fx:id="dt_data" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Label layoutX="213.0" layoutY="33.0" text="Agendamento">
+         <font>
+            <Font name="Century Gothic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_limpar" layoutX="136.0" layoutY="225.0" mnemonicParsing="false" onAction="#btn_limparClick" prefHeight="25.0" prefWidth="85.0" text="Limpar" />
+      <Button fx:id="btn_agendar" layoutX="351.0" layoutY="214.0" mnemonicParsing="false" onAction="#btn_agendarClick" prefHeight="47.0" prefWidth="174.0" text="Agendar" />
+      <TableView fx:id="tb_agendamento" layoutX="36.0" layoutY="273.0" prefHeight="200.0" prefWidth="528.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button fx:id="btn_cancelar" layoutX="36.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cancelarClick" prefHeight="31.0" prefWidth="116.0" text="Cancelar" />
+   </children>
+</AnchorPane>
